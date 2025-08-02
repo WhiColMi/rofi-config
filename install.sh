@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "[*] Setting up Neovim config..."
+echo "[*] Setting up rofi config..."
 
-NVIM_CONFIG_DIR="$HOME/.config/nvim"
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_DIR="$HOME/.config/rofi"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" & pwd)"
 
-if [ -e "$NVIM_CONFIG_DIR" ]; then
-    echo "[!] Backing up existing config to ${NVIM_CONFIG_DIR}.bak"
-    mv "$NVIM_CONFIG_DIR" "${NVIM_CONFIG_DIR}.bak"
+if [ -e "$CONFIG_DIR" ]; then
+    echo "[!] Backing up existing config to ${CONFIG_DIR}.bak"
+    mv "$CONFIG_DIR" "${CONFIG_DIR}.bak"
 fi
 
-mkdir -p "$(dirname "$NVIM_CONFIG_DIR")"
-ln -sfn "$REPO_DIR" "$NVIM_CONFIG_DIR"
+mkdir -p "$(dirname "$CONFIG_DIR")"
+ln -sfn "$REPO_DIR" "$CONFIG_DIR"
 
-echo "[✓] Symlink created: $NVIM_CONFIG_DIR → $REPO_DIR"
-echo "Neovim instalation completed."
+echo "[✓] Symlink created: $CONFIG_DIR → $REPO_DIR"
+echo "Rofi instalation completed."
 
